@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Introduction to the Game of Go</title>
+
+		<meta name="description" content="Introduction to the Game of Go">
+		<meta name="author" content="Paulo Henrique Menin">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/night.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<section>
+					<h1>The game of Go</h1>
+					<img src="images/stones.jpg" width="400px"/>
+					<p>
+						<small>Presented by Paulo Henrique Menin</small>
+					</p>
+				</section>
+
+				<section>
+					<h2>Go</h2>
+					<div style="width: 60%; float: left">
+						<p>Also knowns as Igo on Japan, Wei-qi on China or Baduk on Korea.</p>
+						<p>It's a board game played on a grid of black lines using black and white stones.</p>
+						<p>The aim is to surround more territory than the opponent.</p>
+						<p>Has simple rules but take years to learn how to play well.</p>
+					</div>
+					<img src="images/goban.png" style="width:30%; float: right; margin-top: 90px"/>
+				</section>
+
+				<section>
+					<h2>Facts</h2>
+						<p>Go is the oldest game in the world still played in its original form.</p>
+						<p>Some estimates are as high as 4000 years,<br>but certainly 2500-3000.</p>
+						<p>Second most played game in the world, behind Chinese Chess.</p>
+						<p>It is believed there are more possible game variations than atoms in the visible universe.</p>
+					<img src="images/playing_go.jpeg" height="220px"/>
+				</section>
+
+				<section>
+					<h2>Rules</h2>
+					<ol>
+						<li>Played by two players (Black and White).</li>
+						<li>The board is a grid of 19x19 lines.<br>
+						Usual board sizes for beginners: 9x9 and 13x13.</li>
+						<li>Each line intersection is called <b>a point</b>.</li>
+						<li>Players take alternate turns, Black always starts.</li>
+						<li>The player having the turn puts one of his own<br>
+							  stones on an empty point. Instead of playing a stone,<br>a player may <b>pass</b>.</li>
+					</ol>
+				</section>
+
+				<section>
+					<h2>Rules</h2>
+					<ol start="6">
+						<li>If a player surrounds the opponent's stone or stones completely, he captures those stones and removes them from the board.</li>
+						<div style="text-align: center">
+							<img src="images/cap1.png" margin="10px" />
+							<img src="images/cap2.png" margin="10px" />
+							<img src="images/cap3.png" margin="10px" />
+							<img src="images/cap4.png" margin="10px" style="margin-left: 50px"/>
+						</div>
+						<li>Ko rule: One may not play a move which repeats a previous board position.</li>
+						<div style="text-align: center">
+							<img src="images/rep1.png" margin="10px" />
+							<img src="images/rep2.png" margin="10px" />
+							<img src="images/rep3.png" margin="10px" />
+						</div>
+					</ol>
+				</section>
+
+				<section>
+					<h2>End Game Rule</h2>
+					<p>When neither player wants to keep putting stones, they will each pass.
+						The player who controls more points wins the game.
+					</p>
+
+					<ul>
+						There are two scoring systems:
+						<li>Chinese: Counts territory and stones on the board.</li>
+					  <li>Japanese: Count territory and captured stones.</li>
+					</ul>
+					<div style="text-align: center">
+						<div style="display: inline-block">
+							<img src="images/end1.png" margin="10px" />
+							<br><small>Final position</small>
+					  </div>
+						<div style="display: inline-block">
+							<img src="images/end2.png" margin="10px" />
+							<br><small>Black points</small>
+						</div>
+						<div style="display: inline-block">
+							<img src="images/end3.png" margin="10px" />
+							<br><small>White points</small>
+						</div>
+					</div>
+					<p>Black wins by 1 point.</p>
+				</section>
+
+				<section>
+					<h2>A simple Go match</h2>
+					<div style="text-align: center">
+						<img src="images/5x5.gif" width="300px" style="display: inline-block" />
+						<img class="fragment fade-in" src="images/5x5_last.jpg" width="300px" style="display: inline-block" />
+					</div>
+					<p class="fragment fade-in">White wins by 1</p>
+				</section>
+
+				<section>
+					<h2>Komi</h2>
+					<p>Points added to the score of the player with the white stones<br>
+						 as compensation for playing second
+					 </p>
+
+					 <p>6.5 points is common in games played on a 19x19 board</p>
+					 <p>0.5 for smaller boards<br>or between players with different strengths</p>
+
+				</section>
+
+				<section>
+					<h2>Ranks</h2>
+					<p>How to measure player strongness?</p>
+					<p>Using a rank system</p>
+					<table>
+						<tr>
+							<th>Rank Type</th>
+							<th>Range</th>
+							<th>Stage</th>
+						</tr>
+						<tr>
+							<td>Double-digit Kyu</td>
+							<td>30-10k</td>
+							<td>Beginner</td>
+						</tr>
+						<tr>
+							<td>Single-digit Kyu</td>
+							<td>9-1k</td>
+							<td>Intermediate</td>
+						</tr>
+						<tr>
+							<td>Amateur Dan</td>
+							<td>1-6d</td>
+							<td>Advanced</td>
+						</tr>
+						<tr>
+							<td>Professional Dan</td>
+							<td>1-9p</td>
+							<td>Professional</td>
+						</tr>
+					</table>
+				</section>
+
+				<section>
+					<h2>Handicap</h2>
+					<p>
+						The weaker player gets handicap stones to compensate for the difference in ranks. That way, both players have a chance to win.
+					</p>
+					<div style="text-align: center">
+						<img src="images/hand2.png" width="180px" style="display: inline-block" />
+						<img src="images/hand3.png" width="180px" style="display: inline-block" />
+						<img src="images/hand4.png" width="180px" style="display: inline-block" />
+						<img src="images/hand5.png" width="180px" style="display: inline-block" />
+					</div>
+					<div style="text-align: center">
+						<img src="images/hand6.png" width="180px" style="display: inline-block" />
+						<img src="images/hand7.png" width="180px" style="display: inline-block" />
+						<img src="images/hand8.png" width="180px" style="display: inline-block" />
+						<img src="images/hand9.png" width="180px" style="display: inline-block" />
+					</div>
+				</section>
+
+				<section>
+					<p>
+						Now that you known the rules of Go<br>
+						Everyone here are at least 30k Go players!
+					</p>
+					<img src="images/kitten.jpg" />
+				</section>
+
+				<section>
+					<h2>Concepts</h2>
+					<h3>Groups</h3>
+					<p>One or more stones adjacent to each other. They do not connect by diagonals.</p>
+					<img src="images/group1.png" />
+				</section>
+
+				<section>
+					<h2>Concepts</h2>
+					<h3>Liberties</h3>
+					<p>Number of empty points adjacents to a group. When a group no longer has liberties it is captured.</p>
+					<div style="text-align: center">
+						<img src="images/liberty1.png" style="display: inline-block; vertical-align: top; width: 150px" />
+						<img class="fragment fade-in" src="images/liberty2.png" style="display: inline-block; vertical-align: top; width: 150px" />
+						<img class="fragment fade-in" src="images/liberty3.png" style="display: inline-block; vertical-align: top; width: 190px" />
+						<div class="fragment fade-in" style="display: inline-block; vertical-align: top;">
+							<img src="images/liberty4.png" width="190px" />
+							<br><small>Atari</small>
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<h2>Concepts</h2>
+					<h3>Eyes</h3>
+					<p>Go players call an eye is an empty space surrounded by stones of one colour.</p>
+					<img src="images/eyes.png"/>
+				</section>
+
+				<section>
+					<h2>Concepts</h2>
+					<h3>Life and Death</h3>
+					<p>Two eyes guarantee the life of a group.</p>
+					<p>Only groups with two eyes or more survives at the end.</p>
+					<img src="images/twoeyes.png" width="300px"/>
+
+				</section>
+
+				<section>
+					<h2>Thank You!</h2>
+					<h4>Want to learn more?</h4>
+					<ul>
+						<li>Tutorial: <a href="http://playgo.to/iwtg/en/">http://playgo.to/iwtg/en</a> </li>
+						<li>Wiki: <a href="http://senseis.xmp.net/">http://senseis.xmp.net/</a></li>
+						<li>Play online: <a href="https://www.gokgs.com/">https://www.gokgs.com/</a></li>
+					</ul>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: false,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'zoom', // none/fade/slide/convex/concave/zoom
+
+				// The "normal" size of the presentation, aspect ratio will be preserved
+				// when the presentation is scaled to fit different resolutions. Can be
+				// specified using percentage units.
+				width: 960,
+				height: 700,
+
+				// Factor of the display size that should remain empty around the content
+				margin: 0.1,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
